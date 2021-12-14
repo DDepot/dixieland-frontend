@@ -2,7 +2,7 @@
     "abi": [{
             "inputs": [{
                     "internalType": "address",
-                    "name": "_OHM",
+                    "name": "_JAZZ",                 //OHM?
                     "type": "address"
                 },
                 {
@@ -186,7 +186,7 @@
         },
         {
             "inputs": [],
-            "name": "OHM",
+            "name": "JAZZ",                        //OHM?
             "outputs": [{
                 "internalType": "address",
                 "name": "",
@@ -566,7 +566,7 @@
         },
         {
             "inputs": [{
-                    "internalType": "enum TimeBondDepository.PARAMETER",
+                    "internalType": "enum JazzBondDepository.PARAMETER",
                     "name": "_parameter",
                     "type": "uint8"
                 },
