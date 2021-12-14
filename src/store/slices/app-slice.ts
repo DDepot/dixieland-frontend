@@ -1,6 +1,6 @@
 import { ethers } from "ethers";
 import { getAddresses } from "../../constants";
-import { StakingContract, MemoTokenContract, TimeTokenContract } from "../../abi";
+import { StakingContract, BLueTokenContract, JazzTokenContract } from "../../abi";
 import { setAll } from "../../helpers";
 import { createSlice, createSelector, createAsyncThunk } from "@reduxjs/toolkit";
 import { JsonRpcProvider } from "@ethersproject/providers";
@@ -17,19 +17,19 @@ export const loadAppDetails = createAsyncThunk(
     "app/loadAppDetails",
     //@ts-ignore
     async ({ networkID, provider }: ILoadAppDetails) => {
-        const mimPrice = getTokenPrice("MIM");
+        const guacPrice = getTokenPrice("GUAC");
         const addresses = getAddresses(networkID);
 
         const stakingContract = new ethers.Contract(addresses.STAKING_ADDRESS, StakingContract, provider);
         const currentBlock = await provider.getBlockNumber();
         const currentBlockTime = (await provider.getBlock(currentBlock)).timestamp;
-        const memoContract = new ethers.Contract(addresses.MEMO_ADDRESS, MemoTokenContract, provider);
-        const timeContract = new ethers.Contract(addresses.TIME_ADDRESS, TimeTokenContract, provider);
+        const blueContract = new ethers.Contract(addresses.BLUE_ADDRESS, MemoTokenContract, provider);
+        const jazzContract = new ethers.Contract(addresses.JAZZ_ADDRESS, TimeTokenContract, provider);
 
-        const marketPrice = ((await getMarketPrice(networkID, provider)) / Math.pow(10, 9)) * mimPrice;
+        const marketPrice = ((await getMarketPrice(networkID, provider)) / Math.pow(10, 9)) * guacPrice;
 
-        const totalSupply = (await timeContract.totalSupply()) / Math.pow(10, 9);
-        const circSupply = (await memoContract.circulatingSupply()) / Math.pow(10, 9);
+        const totalSupply = (await jazzContract.totalSupply()) / Math.pow(10, 9);
+        const circSupply = (await blueContract.circulatingSupply()) / Math.pow(10, 9);
 
         const stakingTVL = circSupply * marketPrice;
         const marketCap = totalSupply * marketPrice;
@@ -42,22 +42,22 @@ export const loadAppDetails = createAsyncThunk(
         const tokenAmounts = await Promise.all(tokenAmountsPromises);
         const rfvTreasury = tokenAmounts.reduce((tokenAmount0, tokenAmount1) => tokenAmount0 + tokenAmount1, 0);
 
-        const timeBondsAmountsPromises = allBonds.map(bond => bond.getTimeAmount(networkID, provider));
-        const timeBondsAmounts = await Promise.all(timeBondsAmountsPromises);
-        const timeAmount = timeBondsAmounts.reduce((timeAmount0, timeAmount1) => timeAmount0 + timeAmount1, 0);
-        const timeSupply = totalSupply - timeAmount;
+        const jazzBondsAmountsPromises = allBonds.map(bond => bond.getJazzAmount(networkID, provider));
+        const jazzBondsAmounts = await Promise.all(jazzBondsAmountsPromises);
+        const jazzAmount = jazzBondsAmounts.reduce((jazzAmount0, jazzAmount1) => jazzAmount0 + jazzAmount1, 0);
+        const jazzSupply = totalSupply - jazzAmount;
 
-        const rfv = rfvTreasury / timeSupply;
+        const rfv = rfvTreasury / jazzSupply;
 
         const epoch = await stakingContract.epoch();
         const stakingReward = epoch.distribute;
-        const circ = await memoContract.circulatingSupply();
+        const circ = await blueContract.circulatingSupply();
         const stakingRebase = stakingReward / circ;
         const fiveDayRate = Math.pow(1 + stakingRebase, 5 * 3) - 1;
         const stakingAPY = Math.pow(1 + stakingRebase, 365 * 3) - 1;
 
         const currentIndex = await stakingContract.index();
-        const nextRebase = epoch.endTime;
+        const nextRebase = epoch.endTime;                                 //endJazz?
 
         const treasuryRunway = rfvTreasury / circSupply;
         const runway = Math.log(treasuryRunway) / Math.log(1 + stakingRebase) / 3;
@@ -74,7 +74,7 @@ export const loadAppDetails = createAsyncThunk(
             stakingTVL,
             stakingRebase,
             marketPrice,
-            currentBlockTime,
+            currentBlockTime,                                       
             nextRebase,
             rfv,
             runway,
