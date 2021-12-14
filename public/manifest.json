@@ -1,8 +1,8 @@
 {
-  "short_name": "Wonderland",
+  "short_name": "Dixieland",
   "start_url": ".",
   "homepage": "./",
-  "name": "Wonderland",
+  "name": "Dixieland",
   "launch_path": "/public/index.html",
   "icons": [
     {
