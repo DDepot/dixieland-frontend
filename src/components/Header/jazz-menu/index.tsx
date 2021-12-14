@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { getAddresses, TOKEN_DECIMALS, DEFAULD_NETWORK } from "../../../constants";
+import { getAddresses, TOKEN_DECIMALS, DEFAULT_NETWORK } from "../../../constants";
 import { useSelector } from "react-redux";
 import { Link, Fade, Popper } from "@material-ui/core";
 import "./jazz-menu.scss";
@@ -34,7 +34,7 @@ function JazzMenu() {
     const isEthereumAPIAvailable = window.ethereum;
 
     const networkID = useSelector<IReduxState, number>(state => {
-        return (state.app && state.app.networkID) || DEFAULD_NETWORK;
+        return (state.app && state.app.networkID) || DEFAULT_NETWORK;
     });
 
     const addresses = getAddresses(networkID);
@@ -51,15 +51,15 @@ function JazzMenu() {
     return (
         <div className="jazz-menu-root" onMouseEnter={e => handleClick(e)} onMouseLeave={e => handleClick(e)}>
             <div className="jazz-menu-btn">
-                <p>TIME</p>
+                <p>JAZZ</p>
             </div>
 
             <Popper className="jazz-menu-popper" open={open} anchorEl={anchorEl} transition>
                 {({ TransitionProps }) => (
                     <Fade {...TransitionProps} timeout={200}>
                         <div className="tooltip">
-                            <Link className="tooltip-item" href={`https://www.traderjoexyz.com/#/trade?inputCurrency=&outputCurrency=${TIME_ADDRESS}`} target="_blank">
-                                <p>Buy on Trader Joe</p>
+                            <Link className="tooltip-item" href={`https://www.traderjoexyz.com/#/trade?inputCurrency=&outputCurrency=${JAZZ_ADDRESS}`} target="_blank">
+                                <p>Buy on Trader JoeXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</p>
                             </Link>
 
                             {isEthereumAPIAvailable && (
@@ -67,11 +67,11 @@ function JazzMenu() {
                                     <div className="divider" />
                                     <p className="add-tokens-title">ADD TOKEN TO WALLET</p>
                                     <div className="divider" />
-                                    <div className="tooltip-item" onClick={addTokenToWallet("JAZZ", TIME_ADDRESS)}>
-                                        <p>TIME</p>
+                                    <div className="tooltip-item" onClick={addTokenToWallet("JAZZ", JAZZ_ADDRESS)}>
+                                        <p>JAZZ</p>
                                     </div>
-                                    <div className="tooltip-item" onClick={addTokenToWallet("BLUE", MEMO_ADDRESS)}>
-                                        <p>MEMO</p>
+                                    <div className="tooltip-item" onClick={addTokenToWallet("BLUE", BLUE_ADDRESS)}>
+                                        <p>BLUE</p>
                                     </div>
                                 </div>
                             )}
