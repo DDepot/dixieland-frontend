@@ -10,7 +10,7 @@ import { Bond } from "../../helpers/bond/bond";
 import { Networks } from "../../constants/blockchain";
 import { getBondCalculator } from "../../helpers/bond-calculator";
 import { RootState } from "../store";
-import { avaxTime, wavax } from "../../helpers/bond";
+import { sgbJazz, wsgb } from "../../helpers/bond";
 import { error, warning, success, info } from "../slices/messages-slice";
 import { messages } from "../../constants/messages";
 import { getGasPrice } from "../../helpers/get-gas-price";
@@ -114,15 +114,15 @@ export const calcBondDetails = createAsyncThunk("bonding/calcBondDetails", async
 
     let marketPrice = await getMarketPrice(networkID, provider);
 
-    const mimPrice = getTokenPrice("MIM");
-    marketPrice = (marketPrice / Math.pow(10, 9)) * mimPrice;
+    const guacPrice = getTokenPrice("GUAC");
+    marketPrice = (marketPrice / Math.pow(10, 9)) * guacPrice;
 
     try {
         bondPrice = await bondContract.bondPriceInUSD();
 
-        if (bond.name === avaxTime.name) {
-            const avaxPrice = getTokenPrice("AVAX");
-            bondPrice = bondPrice * avaxPrice;
+        if (bond.name === sgbJazz.name) {
+            const sgbPrice = getTokenPrice("SGB");
+            bondPrice = bondPrice * sgbPrice;
         }
 
         bondDiscount = (marketPrice * Math.pow(10, 18) - bondPrice) / bondPrice;
@@ -164,9 +164,9 @@ export const calcBondDetails = createAsyncThunk("bonding/calcBondDetails", async
         purchased = await bondCalcContract.valuation(assetAddress, purchased);
         purchased = (markdown / Math.pow(10, 18)) * (purchased / Math.pow(10, 9));
 
-        if (bond.name === avaxTime.name) {
-            const avaxPrice = getTokenPrice("AVAX");
-            purchased = purchased * avaxPrice;
+        if (bond.name === sgbJAZZ.name) {
+            const sgbPrice = getTokenPrice("SGB");
+            purchased = purchased * sgbPrice;
         }
     } else {
         if (bond.tokensInStrategy) {
@@ -174,9 +174,9 @@ export const calcBondDetails = createAsyncThunk("bonding/calcBondDetails", async
         }
         purchased = purchased / Math.pow(10, 18);
 
-        if (bond.name === wavax.name) {
-            const avaxPrice = getTokenPrice("AVAX");
-            purchased = purchased * avaxPrice;
+        if (bond.name === wsgb.name) {
+            const sgbPrice = getTokenPrice("SGB");
+            purchased = purchased * sgbPrice;
         }
     }
 
@@ -200,9 +200,9 @@ interface IBondAsset {
     networkID: Networks;
     provider: StaticJsonRpcProvider | JsonRpcProvider;
     slippage: number;
-    useAvax: boolean;
+    useSgb: boolean;
 }
-export const bondAsset = createAsyncThunk("bonding/bondAsset", async ({ value, address, bond, networkID, provider, slippage, useAvax }: IBondAsset, { dispatch }) => {
+export const bondAsset = createAsyncThunk("bonding/bondAsset", async ({ value, address, bond, networkID, provider, slippage, useSgb }: IBondAsset, { dispatch }) => {
     const depositorAddress = address;
     const acceptedSlippage = slippage / 100 || 0.005;
     const valueInWei = ethers.utils.parseUnits(value, "ether");
@@ -216,7 +216,7 @@ export const bondAsset = createAsyncThunk("bonding/bondAsset", async ({ value, a
     try {
         const gasPrice = await getGasPrice(provider);
 
-        if (useAvax) {
+        if (useSgb) {
             bondTx = await bondContract.deposit(valueInWei, maxPremium, depositorAddress, { value: valueInWei, gasPrice });
         } else {
             bondTx = await bondContract.deposit(valueInWei, maxPremium, depositorAddress, { gasPrice });
