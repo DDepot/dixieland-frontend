@@ -2,11 +2,11 @@
     "abi": [{
         "inputs": [{
             "internalType": "address",
-            "name": "_Time",
+            "name": "_Jazz",
             "type": "address"
         }, {
             "internalType": "address",
-            "name": "_MIM",
+            "name": "_GUAC",
             "type": "address"
         }, {
             "internalType": "uint32",
@@ -19,7 +19,7 @@
         "anonymous": false,
         "inputs": [{
             "indexed": true,
-            "internalType": "enum TimeTreasury.MANAGING",
+            "internalType": "enum JazzTreasury.MANAGING",
             "name": "managing",
             "type": "uint8"
         }, {
@@ -39,7 +39,7 @@
         "anonymous": false,
         "inputs": [{
             "indexed": true,
-            "internalType": "enum TimeTreasury.MANAGING",
+            "internalType": "enum JazzTreasury.MANAGING",
             "name": "managing",
             "type": "uint8"
         }, {
@@ -269,7 +269,7 @@
         "type": "function"
     }, {
         "inputs": [],
-        "name": "MEMOries",
+        "name": "BLUEs",
         "outputs": [{
             "internalType": "address",
             "name": "",
@@ -293,7 +293,7 @@
         "type": "function"
     }, {
         "inputs": [],
-        "name": "Time",
+        "name": "Jazz",
         "outputs": [{
             "internalType": "address",
             "name": "",
@@ -633,7 +633,7 @@
         "type": "function"
     }, {
         "inputs": [{
-            "internalType": "enum TimeTreasury.MANAGING",
+            "internalType": "enum JazzTreasury.MANAGING",
             "name": "_managing",
             "type": "uint8"
         }, {
@@ -661,7 +661,7 @@
             "name": "_amount",
             "type": "uint256"
         }],
-        "name": "repayDebtWithOHM",
+        "name": "repayDebtWithJAZZ",              //WithOHM?
         "outputs": [],
         "stateMutability": "nonpayable",
         "type": "function"
@@ -807,7 +807,7 @@
         "type": "function"
     }, {
         "inputs": [],
-        "name": "sOHMQueue",
+        "name": "sJAZZQueue",                             //sOHM?
         "outputs": [{
             "internalType": "uint256",
             "name": "",
@@ -827,7 +827,7 @@
         "type": "function"
     }, {
         "inputs": [{
-            "internalType": "enum TimeTreasury.MANAGING",
+            "internalType": "enum JazzTreasury.MANAGING",
             "name": "_managing",
             "type": "uint8"
         }, {
