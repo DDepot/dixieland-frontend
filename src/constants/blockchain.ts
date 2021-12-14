@@ -1,7 +1,7 @@
-export const TOKEN_DECIMALS = 9;
+export const TOKEN_DECIMALS = 18;
 
 export enum Networks {
-    AVAX = 43114,
+    SGB = ??????,                       //fix
 }
 
-export const DEFAULD_NETWORK = Networks.AVAX;
+export const DEFAULT_NETWORK = Networks.SGB;
