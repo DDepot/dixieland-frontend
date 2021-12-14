@@ -2,7 +2,7 @@ import { useState } from "react";
 import { getAddresses, TOKEN_DECIMALS, DEFAULD_NETWORK } from "../../../constants";
 import { useSelector } from "react-redux";
 import { Link, Fade, Popper } from "@material-ui/core";
-import "./time-menu.scss";
+import "./jazz-menu.scss";
 import { IReduxState } from "../../../store/slices/state.interface";
 import { getTokenUrl } from "../../../helpers";
 
@@ -29,7 +29,7 @@ const addTokenToWallet = (tokenSymbol: string, tokenAddress: string) => async ()
     }
 };
 
-function TimeMenu() {
+function JazzMenu() {
     const [anchorEl, setAnchorEl] = useState(null);
     const isEthereumAPIAvailable = window.ethereum;
 
@@ -39,8 +39,8 @@ function TimeMenu() {
 
     const addresses = getAddresses(networkID);
 
-    const MEMO_ADDRESS = addresses.MEMO_ADDRESS;
-    const TIME_ADDRESS = addresses.TIME_ADDRESS;
+    const BLUE_ADDRESS = addresses.BLUE_ADDRESS;
+    const JAZZ_ADDRESS = addresses.JAZZ_ADDRESS;
 
     const handleClick = (event: any) => {
         setAnchorEl(anchorEl ? null : event.currentTarget);
@@ -49,12 +49,12 @@ function TimeMenu() {
     const open = Boolean(anchorEl);
 
     return (
-        <div className="time-menu-root" onMouseEnter={e => handleClick(e)} onMouseLeave={e => handleClick(e)}>
-            <div className="time-menu-btn">
+        <div className="jazz-menu-root" onMouseEnter={e => handleClick(e)} onMouseLeave={e => handleClick(e)}>
+            <div className="jazz-menu-btn">
                 <p>TIME</p>
             </div>
 
-            <Popper className="time-menu-popper" open={open} anchorEl={anchorEl} transition>
+            <Popper className="jazz-menu-popper" open={open} anchorEl={anchorEl} transition>
                 {({ TransitionProps }) => (
                     <Fade {...TransitionProps} timeout={200}>
                         <div className="tooltip">
@@ -67,10 +67,10 @@ function TimeMenu() {
                                     <div className="divider" />
                                     <p className="add-tokens-title">ADD TOKEN TO WALLET</p>
                                     <div className="divider" />
-                                    <div className="tooltip-item" onClick={addTokenToWallet("TIME", TIME_ADDRESS)}>
+                                    <div className="tooltip-item" onClick={addTokenToWallet("JAZZ", TIME_ADDRESS)}>
                                         <p>TIME</p>
                                     </div>
-                                    <div className="tooltip-item" onClick={addTokenToWallet("MEMO", MEMO_ADDRESS)}>
+                                    <div className="tooltip-item" onClick={addTokenToWallet("BLUE", MEMO_ADDRESS)}>
                                         <p>MEMO</p>
                                     </div>
                                 </div>
@@ -83,4 +83,4 @@ function TimeMenu() {
     );
 }
 
-export default TimeMenu;
+export default JazzMenu;
