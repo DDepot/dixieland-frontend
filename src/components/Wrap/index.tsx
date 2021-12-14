@@ -26,11 +26,11 @@ function Wrap({ open, handleClose }: IAdvancedSettingsProps) {
 
     const isAppLoading = useSelector<IReduxState, boolean>(state => state.app.loading);
 
-    const memoBalance = useSelector<IReduxState, string>(state => {
-        return state.account.balances && state.account.balances.memo;
+    const blueBalance = useSelector<IReduxState, string>(state => {
+        return state.account.balances && state.account.balances.blue;
     });
-    const wmemoBalance = useSelector<IReduxState, string>(state => {
-        return state.account.balances && state.account.balances.wmemo;
+    const wblueBalance = useSelector<IReduxState, string>(state => {
+        return state.account.balances && state.account.balances.wblue;
     });
 
     const wrapValue = useSelector<IReduxState, string>(state => {
@@ -45,8 +45,8 @@ function Wrap({ open, handleClose }: IAdvancedSettingsProps) {
         return state.pendingTransactions;
     });
 
-    const memoAllowance = useSelector<IReduxState, number>(state => {
-        return state.account.wrapping && state.account.wrapping.memo;
+    const blueAllowance = useSelector<IReduxState, number>(state => {
+        return state.account.wrapping && state.account.wrapping.blue;
     });
 
     const [isWrap, setIsWrap] = useState(true);
@@ -54,9 +54,9 @@ function Wrap({ open, handleClose }: IAdvancedSettingsProps) {
 
     const setMax = () => {
         if (isWrap) {
-            setValue(memoBalance);
+            setValue(blueBalance);
         } else {
-            setValue(wmemoBalance);
+            setValue(wblueBalance);
         }
     };
 
@@ -88,12 +88,12 @@ function Wrap({ open, handleClose }: IAdvancedSettingsProps) {
         handleClose();
     };
 
-    const hasAllowance = useCallback(() => memoAllowance > 0, [memoAllowance]);
+    const hasAllowance = useCallback(() => blueAllowance > 0, [blueAllowance]);
 
-    const trimmedMemoBalance = trim(Number(memoBalance), 6);
-    const trimmedWmemoBalance = trim(Number(wmemoBalance), 6);
+    const trimmedBlueBalance = trim(Number(blueBalance), 6);
+    const trimmedWblueBalance = trim(Number(wblueBalance), 6);
 
-    const getBalance = () => (isWrap ? `${trimmedMemoBalance} MEMO` : `${trimmedWmemoBalance} wMEMO`);
+    const getBalance = () => (isWrap ? `${trimmedBlueBalance} BLUE` : `${trimmedWblueBalance} wBLUE`);
 
     const handleOnWrap = async () => {
         if (await checkWrongNetwork()) return;
@@ -121,7 +121,7 @@ function Wrap({ open, handleClose }: IAdvancedSettingsProps) {
                     </IconButton>
                     <div className="wrap-price" onClick={() => setIsWrapPrice(!isWrapPrice)}>
                         <p>
-                            1 {isWrapPrice ? "MEMO" : "wMEMO"} = {`${trim(wrapPrice, 4)} ${isWrapPrice ? "wMEMO" : "MEMO"}`}
+                            1 {isWrapPrice ? "BLUE" : "wBLUE"} = {`${trim(wrapPrice, 4)} ${isWrapPrice ? "wBLUE" : "BLUE"}`}
                         </p>
                     </div>
                 </div>
@@ -142,7 +142,7 @@ function Wrap({ open, handleClose }: IAdvancedSettingsProps) {
                         startAdornment={
                             <InputAdornment position="start">
                                 <div className="wrap-action-input-text">
-                                    <p>{isWrap ? "MEMO" : "wMEMO"}</p>
+                                    <p>{isWrap ? "BLUE" : "wBLUE"}</p>
                                 </div>
                             </InputAdornment>
                         }
@@ -169,7 +169,7 @@ function Wrap({ open, handleClose }: IAdvancedSettingsProps) {
                         startAdornment={
                             <InputAdornment position="start">
                                 <div className="wrap-action-input-text">
-                                    <p>{isWrap ? "wMEMO" : "MEMO"}</p>
+                                    <p>{isWrap ? "wBLUE" : "BLUE"}</p>
                                 </div>
                             </InputAdornment>
                         }
