@@ -13,6 +13,7 @@ import EleIcon from "../assets/tokens/ELE.png";
 import ElkIcon from "../assets/tokens/ELK.png";
 import FraxIcon from "../assets/tokens/FRAX.png";
 import GbIcon from "../assets/tokens/GB.png";
+import GuacIcon from "../assets/tokens/GUAC.png";
 import HatIcon from "../assets/tokens/HAT.png";
 import HuskyIcon from "../assets/tokens/HUSKY.png";
 import IceIcon from "../assets/tokens/ICE.png";
@@ -27,6 +28,7 @@ import PefiIcon from "../assets/tokens/PEFI.png";
 import PngIcon from "../assets/tokens/PNG.png";
 import QiIcon from "../assets/tokens/QI.png";
 import RelayIcon from "../assets/tokens/RELAY.png";
+import SgbIcon from "../assets/tokens/SGB.png";
 import SherpaIcon from "../assets/tokens/SHERPA.png";
 import ShibxIcon from "../assets/tokens/SHIBX.png";
 import SingIcon from "../assets/tokens/SING.png";
@@ -161,6 +163,13 @@ const gb: IToken = {
     decimals: 9,
 };
 
+const guac: IToken = {
+    name: "GUAC",
+    address: "0x9084XXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+    img: GUACIcon,
+    decimals: 18,
+};
+
 const hat: IToken = {
     name: "HAT",
     address: "0x82FE038Ea4b50f9C957da326C412ebd73462077C",
@@ -277,6 +286,13 @@ const sing: IToken = {
     name: "SING",
     address: "0xF9A075C9647e91410bF6C402bDF166e1540f67F0",
     img: SingIcon,
+    decimals: 18,
+};
+
+const sgb: IToken = {
+    name: "SGB",
+    address: "0x9084XXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+    img: SGBIcon,
     decimals: 18,
 };
 
