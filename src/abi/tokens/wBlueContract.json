@@ -4,7 +4,7 @@
             "stateMutability": "nonpayable",
             "inputs": [{
                 "type": "address",
-                "name": "_MEMO",
+                "name": "_BLUE",
                 "internalType": "address"
             }]
         },
@@ -64,7 +64,7 @@
                 "name": "",
                 "internalType": "address"
             }],
-            "name": "MEMO",
+            "name": "BLUE",
             "inputs": []
         },
         {
@@ -75,7 +75,7 @@
                 "name": "",
                 "internalType": "uint256"
             }],
-            "name": "MEMOTowMEMO",
+            "name": "BLUETowBLUE",
             "inputs": [{
                 "type": "uint256",
                 "name": "_amount",
@@ -295,7 +295,7 @@
                 "name": "",
                 "internalType": "uint256"
             }],
-            "name": "wMEMOToMEMO",
+            "name": "wBLUEToBLUE",
             "inputs": [{
                 "type": "uint256",
                 "name": "_amount",
