@@ -3,7 +3,7 @@ import { Networks } from "../constants/blockchain";
 const switchRequest = () => {
     return window.ethereum.request({
         method: "wallet_switchEthereumChain",
-        params: [{ chainId: "0xa86a" }],
+        params: [{ chainId: "0xXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXx" }],
     });
 };
 
@@ -12,13 +12,13 @@ const addChainRequest = () => {
         method: "wallet_addEthereumChain",
         params: [
             {
-                chainId: "0xa86a",
-                chainName: "Avalanche Mainnet",
-                rpcUrls: ["https://api.avax.network/ext/bc/C/rpc"],
-                blockExplorerUrls: ["https://cchain.explorer.avax.network/"],
+                chainId: "19",
+                chainName: "Songbird",
+                rpcUrls: ["https://songbird.towolabs.com/rpc"],
+                blockExplorerUrls: ["https://songbird-explorer.flare.network/"],
                 nativeCurrency: {
-                    name: "AVAX",
-                    symbol: "AVAX",
+                    name: "Songbird",
+                    symbol: "SGB",
                     decimals: 18,
                 },
             },
