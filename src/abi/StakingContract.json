@@ -2,11 +2,11 @@
     "abi": [{
         "inputs": [{
             "internalType": "address",
-            "name": "_Time",
+            "name": "_Jazz",
             "type": "address"
         }, {
             "internalType": "address",
-            "name": "_Memories",
+            "name": "_Blues",
             "type": "address"
         }, {
             "internalType": "uint32",
@@ -55,7 +55,7 @@
         "type": "event"
     }, {
         "inputs": [],
-        "name": "Memories",
+        "name": "Blues",
         "outputs": [{
             "internalType": "address",
             "name": "",
@@ -65,7 +65,7 @@
         "type": "function"
     }, {
         "inputs": [],
-        "name": "Time",
+        "name": "Jazz",
         "outputs": [{
             "internalType": "address",
             "name": "",
@@ -120,7 +120,7 @@
             "type": "uint32"
         }, {
             "internalType": "uint32",
-            "name": "endTime",
+            "name": "endJazz",
             "type": "uint32"
         }],
         "stateMutability": "view",
@@ -211,7 +211,7 @@
         "type": "function"
     }, {
         "inputs": [{
-            "internalType": "enum TimeStaking.CONTRACTS",
+            "internalType": "enum JazzStaking.CONTRACTS",
             "name": "_contract",
             "type": "uint8"
         }, {
