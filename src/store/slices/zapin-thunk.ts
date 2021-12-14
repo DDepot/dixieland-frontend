@@ -8,7 +8,7 @@ import { clearPendingTxn, fetchPendingTxns } from "./pending-txns-slice";
 import { metamaskErrorWrap } from "../../helpers/metamask-error-wrap";
 import { getGasPrice } from "../../helpers/get-gas-price";
 import { ethers } from "ethers";
-import { MimTokenContract, ZapinContract } from "../../abi";
+import { GuacTokenContract, ZapinContract } from "../../abi";
 import { calculateUserBondDetails, fetchAccountSuccess } from "./account-slice";
 import { IAllBondData } from "../../hooks/bonds";
 import { zapinData, zapinLpData } from "../../helpers/zapin-fetch-data";
@@ -31,7 +31,7 @@ export const changeApproval = createAsyncThunk("zapin/changeApproval", async ({ 
 
     const signer = provider.getSigner();
 
-    const tokenContract = new ethers.Contract(token.address, MimTokenContract, signer);
+    const tokenContract = new ethers.Contract(token.address, GuacTokenContract, signer);
 
     let approveTx;
     try {
@@ -201,7 +201,7 @@ export const zapinMint = createAsyncThunk(
                     });
                 }
             } else {
-                if (token.isAvax) {
+                if (token.isSgb) {
                     zapinTx = await zapinContract.ZapIn(
                         ethers.constants.AddressZero,
                         bondAddress,
