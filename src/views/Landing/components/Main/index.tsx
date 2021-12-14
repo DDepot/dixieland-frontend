@@ -27,7 +27,7 @@ function Main() {
             </div>
             <div className="landing-main-help-text-wrap">
                 <p>a Decentralized reserve currency protocol built on the Songbird Network. Stake</p>
-                <p>and earn compounding interest with JAZZ</p>
+                <p>and earn auto compounding interest with JAZZ</p>
             </div>
         </div>
     );
