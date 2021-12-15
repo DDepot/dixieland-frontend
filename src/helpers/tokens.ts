@@ -17,6 +17,7 @@ import GuacIcon from "../assets/tokens/GUAC.png";
 import HatIcon from "../assets/tokens/HAT.png";
 import HuskyIcon from "../assets/tokens/HUSKY.png";
 import IceIcon from "../assets/tokens/ICE.png";
+import JazzIcon from "../assets/tokens/JAZZ.png";
 import JoeIcon from "../assets/tokens/JOE.png";
 import KloIcon from "../assets/tokens/KLO.png";
 import LinkEIcon from "../assets/tokens/LINK.e.png";
@@ -47,6 +48,7 @@ import WBtcIcon from "../assets/tokens/WBTC.e.png";
 import WetIcon from "../assets/tokens/WET.png";
 import WethEIcon from "../assets/tokens/WETH.e.png";
 import XavaIcon from "../assets/tokens/XAVA.png";
+import WsgbIcon from "../assets/tokens/WSGB.png";
 import YakIcon from "../assets/tokens/YAK.png";
 
 export interface IToken {
@@ -188,6 +190,13 @@ const ice: IToken = {
     name: "ICE",
     address: "0xe0Ce60AF0850bF54072635e66E79Df17082A1109",
     img: IceIcon,
+    decimals: 18,
+};
+
+const jazz: IToken = {
+    name: "JAZZ",
+    address: "0x6e84XXXXXXXXXXXXXXXXXXXXXXXXd",
+    img: JazzIcon,
     decimals: 18,
 };
 
@@ -394,6 +403,13 @@ const weth: IToken = {
     decimals: 18,
 };
 
+const wsgb: IToken = {
+    name: "WSGB",
+    address: "0x49D5XXXXXXXXXXXXXXXB",
+    img: WsgbIcon,
+    decimals: 18,
+};
+
 const xava: IToken = {
     name: "XAVA",
     address: "0xd1c3f94DE7e5B45fa4eDBBA472491a9f4B166FC4",
@@ -428,6 +444,7 @@ export default [
     hat,
     husky,
     ice,
+    jazz,
     joe,
     klo,
     link,
@@ -456,6 +473,7 @@ export default [
     wbtc,
     wet,
     weth,
+    wsgb,
     xava,
     yak,
 ];
