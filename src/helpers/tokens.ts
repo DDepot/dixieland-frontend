@@ -13,6 +13,7 @@ import EleIcon from "../assets/tokens/ELE.png";
 import ElkIcon from "../assets/tokens/ELK.png";
 import FraxIcon from "../assets/tokens/FRAX.png";
 import GbIcon from "../assets/tokens/GB.png";
+import GuacIcon from "../assets/tokens/GUAC.png";
 import HatIcon from "../assets/tokens/HAT.png";
 import HuskyIcon from "../assets/tokens/HUSKY.png";
 import IceIcon from "../assets/tokens/ICE.png";
@@ -158,6 +159,13 @@ const gb: IToken = {
     name: "GB",
     address: "0x90842eb834cFD2A1DB0b1512B254a18E4D396215",
     img: GbIcon,
+    decimals: 9,
+};
+
+const guac: IToken = {
+    name: "GUAC",
+    address: "0x90842XXXXXXXXXXXXXXX6215",
+    img: GuacIcon,
     decimals: 9,
 };
 
