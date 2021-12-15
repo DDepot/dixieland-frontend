@@ -424,6 +424,7 @@ export default [
     elk,
     frax,
     gb,
+    guac,
     hat,
     husky,
     ice,
