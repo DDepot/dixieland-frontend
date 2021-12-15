@@ -24,7 +24,7 @@ function ChooseToken({ open, handleClose, handleSelect, bond }: IChooseTokenProp
 
     const [quantity, setQuantity] = useState("");
 
-    const filtredTokens = tokens.filter(({ name, address, isAvax }) => {
+    const filtredTokens = tokens.filter(({ name, address, isSgb }) => {
         let addressTest = true;
 
         if (quantity && quantity.length === 42) {
