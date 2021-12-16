@@ -46,11 +46,11 @@ function Bond({ bond }: IBondProps) {
                                 <div className="bond-price-data">
                                     <p className="bond-price-data-title">Mint Price</p>
                                     <p className="bond-price-data-value">
-                                        {isBondLoading ? <Skeleton /> : bond.isLP || bond.name === "wavax" ? `$${trim(bond.bondPrice, 2)}` : `${trim(bond.bondPrice, 2)} MIM`}
+                                        {isBondLoading ? <Skeleton /> : bond.isLP || bond.name === "wsgb" ? `$${trim(bond.bondPrice, 2)}` : `${trim(bond.bondPrice, 2)} GUAC`}
                                     </p>
                                 </div>
                                 <div className="bond-price-data">
-                                    <p className="bond-price-data-title">TIME Price</p>
+                                    <p className="bond-price-data-title">JAZZ Price</p>
                                     <p className="bond-price-data-value">{isBondLoading ? <Skeleton /> : `$${trim(bond.marketPrice, 2)}`}</p>
                                 </div>
                             </Box>
