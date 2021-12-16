@@ -47,6 +47,7 @@ import WavaxIcon from "../assets/tokens/WAVAX.png";
 import WBtcIcon from "../assets/tokens/WBTC.e.png";
 import WetIcon from "../assets/tokens/WET.png";
 import WethEIcon from "../assets/tokens/WETH.e.png";
+import WsgbIcon from "../assets/tokens/WSGB.png";
 import XavaIcon from "../assets/tokens/XAVA.png";
 import WsgbIcon from "../assets/tokens/WSGB.png";
 import YakIcon from "../assets/tokens/YAK.png";
@@ -456,6 +457,7 @@ export default [
     png,
     qi,
     relay,
+    sgb,
     sherpa,
     shibx,
     sing,
