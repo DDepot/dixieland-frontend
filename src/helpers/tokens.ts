@@ -49,7 +49,6 @@ import WetIcon from "../assets/tokens/WET.png";
 import WethEIcon from "../assets/tokens/WETH.e.png";
 import WsgbIcon from "../assets/tokens/WSGB.png";
 import XavaIcon from "../assets/tokens/XAVA.png";
-import WsgbIcon from "../assets/tokens/WSGB.png";
 import YakIcon from "../assets/tokens/YAK.png";
 
 export interface IToken {
