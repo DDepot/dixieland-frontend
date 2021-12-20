@@ -13,7 +13,7 @@ import EleIcon from "../assets/tokens/ELE.png";
 import ElkIcon from "../assets/tokens/ELK.png";
 import FraxIcon from "../assets/tokens/FRAX.png";
 import GbIcon from "../assets/tokens/GB.png";
-import GuacIcon from "../assets/tokens/GUAC.png";
+import GuacIcon from "../assets/tokens/GUAC.svg";
 import HatIcon from "../assets/tokens/HAT.png";
 import HuskyIcon from "../assets/tokens/HUSKY.png";
 import IceIcon from "../assets/tokens/ICE.png";
