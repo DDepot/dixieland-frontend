@@ -10,7 +10,7 @@ import useTokens, { IAllTokenData } from "../../../../hooks/tokens";
 import { trim } from "../../../../helpers";
 import { IAllBondData } from "../../../../hooks/bonds";
 import { guac, wsgb } from "../../../../helpers/bond";
-import { guac as guacToken, wsgb as wsgbToken } from "../../../../helpers/tokens";
+import { mim as guacToken, wsgb as wsgbToken } from "../../../../helpers/tokens";
 
 interface IChooseTokenProps {
     open: boolean;
