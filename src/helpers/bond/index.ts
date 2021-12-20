@@ -22,7 +22,7 @@ export const guac = new StableBond({
             reserveAddress: "0x130966628XXXXXXXXXXXXXXXXXXXC18D",
         },
     },
-    tokensInStrategy: "60500000000000000000000000",                                  //edit?
+    /*tokensInStrategy: "60500000000000000000000000",*/                             
 });
 
 export const wsgb = new CustomBond({
@@ -38,7 +38,7 @@ export const wsgb = new CustomBond({
             reserveAddress: "0xb31f66aa3c1eXXXXXXXXXXXXXXXXXXb85fd66c7",
         },
     },
-    tokensInStrategy: "756916000000000000000000",                               //edit?
+    /*tokensInStrategy: "756916000000000000000000",*/                    
 });
 
 export const guacJazz = new LPBond({
@@ -54,7 +54,7 @@ export const guacJazz = new LPBond({
             reserveAddress: "0x113f4133XXXXXXXXXXXXXXXXXXXXXXd7bf747df",
         },
     },
-    lpUrl: "https://www.traderjoexyz.com/#/pool/0x130966628846BFd36ff31a822705796e8cb8C18D/0xb54f16fB19478766A268F172C9480f8da1a7c9C3",    //edit to dex?
+    lpUrl: "https://www.traderjoexyz.com/#/pool/0x1309",    
 });
 
 export const sgbJazz = new CustomLPBond({
@@ -70,7 +70,7 @@ export const sgbJazz = new CustomLPBond({
             reserveAddress: "0xf64e1c5BXXXXXXXXXXXXXXXXXXXXXXc3eab4917",
         },
     },
-    lpUrl: "https://www.traderjoexyz.com/#/pool/AVAX/0xb54f16fB19478766A268F172C9480f8da1a7c9C3",                  //edit to dex?
+    lpUrl: "https://www.traderjoexyz.com/#/pool/AVAX/0xb54f16fB19",           
 });
 
 export default [guac, wsgb, guacJazz, sgbJazz];
