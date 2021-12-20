@@ -77,7 +77,7 @@ function JazzMenu() {
                             )}
                         </div>
                     </Fade>
-                )} 
+                
             </Popper>
         </div>
     );
