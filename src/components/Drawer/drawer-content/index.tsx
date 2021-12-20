@@ -130,7 +130,7 @@ function NavContent() {
                 </div>
             </div>
             <div className="dapp-menu-doc-link">
-                <Link href="https://dixieland.gitbook.io/dixieland/" target="_blank">.          //gitbook url
+                <Link href="https://dixieland.gitbook.io/dixieland/" target="_blank">.        
                     <img alt="" src={DocsIcon} />
                     <p>Docs</p>
                 </Link>
