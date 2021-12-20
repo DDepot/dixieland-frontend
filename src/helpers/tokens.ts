@@ -304,6 +304,7 @@ export const sgb: IToken = {
     img: SgbIcon,
     address: "",
     decimals: 18,
+};
 
 const snob: IToken = {
     name: "SNOB",
