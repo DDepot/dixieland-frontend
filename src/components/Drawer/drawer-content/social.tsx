@@ -15,7 +15,7 @@ export default function Social() {
                 <SvgIcon color="primary" component={Twitter} />
             </Link>
 
-            <Link href="https://t.me/joinchat/XXXXXXXXXXXXXXX" target="_blank">                           //add telegram, and discord
+            <Link href="https://t.me/joinchat/XXXXXXXXXXXXXXX" target="_blank">                           
                 <SvgIcon viewBox="0 0 32 32" color="primary" component={Telegram} />
             </Link>
 
