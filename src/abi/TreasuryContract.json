@@ -807,7 +807,7 @@
         "type": "function"
     }, {
         "inputs": [],
-        "name": "sJAZZQueue",                             //sOHM?
+        "name": "sJAZZQueue",                         
         "outputs": [{
             "internalType": "uint256",
             "name": "",
