@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "@material-ui/core";
 import "./main.scss";
-import JazzImg from "../../../../assets/icons/XXXXXXXXXXLOGOXXXXXXXXXXXXXXXXXXXXXXX.jpeg";      //need Jazz Img
+import JazzImg from "../../../../assets/icons/Dixieland_Band.jpeg";      
 
 function Main() {
     return (
