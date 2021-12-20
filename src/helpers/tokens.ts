@@ -165,10 +165,10 @@ const gb: IToken = {
     decimals: 9,
 };
 
-const guac: IToken = {
+export const guac: IToken = {
     name: "GUAC",
-    address: "0x9084XXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
-    img: GUACIcon,
+    address: "",
+    img: GuacIcon,
     decimals: 18,
 };
 
@@ -298,12 +298,12 @@ const sing: IToken = {
     decimals: 18,
 };
 
-const sgb: IToken = {
+export const sgb: IToken = {
     name: "SGB",
-    address: "0x9084XXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
-    img: SGBIcon,
+    isSgb: true,
+    img: SgbIcon,
+    address: "",
     decimals: 18,
-};
 
 const snob: IToken = {
     name: "SNOB",
@@ -403,9 +403,9 @@ const weth: IToken = {
     decimals: 18,
 };
 
-const wsgb: IToken = {
+export const wsgb: IToken = {
     name: "WSGB",
-    address: "0x49D5XXXXXXXXXXXXXXXB",
+    address: "",
     img: WsgbIcon,
     decimals: 18,
 };
