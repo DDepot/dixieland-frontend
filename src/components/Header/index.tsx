@@ -1,6 +1,6 @@
 import { AppBar, Toolbar } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
-import useMediaQuery from "@material-ui/core/useMediaQuery";
+*/import useMediaQuery from "@material-ui/core/useMediaQuery";*/
 import MenuIcon from "../../assets/icons/hamburger.svg";
 import JazzMenu from "./jazz-menu";
 import ConnectButton from "./connect-button";
