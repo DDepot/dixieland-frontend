@@ -2,7 +2,7 @@
     "abi": [{
             "inputs": [{
                     "internalType": "address",
-                    "name": "_JAZZ",                 //OHM?
+                    "name": "_JAZZ",            
                     "type": "address"
                 },
                 {
@@ -186,7 +186,7 @@
         },
         {
             "inputs": [],
-            "name": "JAZZ",                        //OHM?
+            "name": "JAZZ",                     
             "outputs": [{
                 "internalType": "address",
                 "name": "",
