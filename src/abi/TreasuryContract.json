@@ -661,7 +661,7 @@
             "name": "_amount",
             "type": "uint256"
         }],
-        "name": "repayDebtWithJAZZ",              //WithOHM?
+        "name": "repayDebtWithJAZZ",            
         "outputs": [],
         "stateMutability": "nonpayable",
         "type": "function"
