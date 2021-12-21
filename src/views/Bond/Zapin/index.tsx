@@ -95,7 +95,7 @@ function Zapin({ open, handleClose, bond }: IZapinProps) {
 
     const setMax = () => {
         const maxBondPriceToken = bond.maxBondPriceToken / priceToken;
-        let amount: any = Math.min(maxBondPriceToken, token.isAvax ? token.balance * 0.99 : token.balance);
+        let amount: any = Math.min(maxBondPriceToken, token.isSgb ? token.balance * 0.99 : token.balance);
 
         if (amount) {
             amount = trim(amount);
