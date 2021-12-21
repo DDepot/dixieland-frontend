@@ -23,7 +23,7 @@ function BondPurchase({ bond, slippage }: IBondPurchaseProps) {
     const { provider, address, chainID, checkWrongNetwork } = useWeb3Context();
 
     const [quantity, setQuantity] = useState("");
-    const [useAvax, setUseAvax] = useState(false);
+    const [useAvax, setUseSgb] = useState(false);
 
     const isBondLoading = useSelector<IReduxState, boolean>(state => state.bonding.loading ?? true);
     const [zapinOpen, setZapinOpen] = useState(false);
@@ -57,7 +57,7 @@ function BondPurchase({ bond, slippage }: IBondPurchaseProps) {
                         networkID: chainID,
                         provider,
                         address,
-                        useAvax,
+                        useSgb,
                     }),
                 );
                 clearInput();
@@ -73,7 +73,7 @@ function BondPurchase({ bond, slippage }: IBondPurchaseProps) {
                     networkID: chainID,
                     provider,
                     address,
-                    useAvax,
+                    useSgb,
                 }),
             );
             clearInput();
@@ -89,7 +89,7 @@ function BondPurchase({ bond, slippage }: IBondPurchaseProps) {
     }, [bond.allowance]);
 
     const setMax = () => {
-        let amount: any = Math.min(bond.maxBondPriceToken * 0.9999, useAvax ? bond.avaxBalance * 0.99 : bond.balance);
+        let amount: any = Math.min(bond.maxBondPriceToken * 0.9999, useSgb ? bond.sgbBalance * 0.99 : bond.balance);
 
         if (amount) {
             amount = trim(amount);
@@ -120,16 +120,16 @@ function BondPurchase({ bond, slippage }: IBondPurchaseProps) {
         setZapinOpen(false);
     };
 
-    const displayUnits = useAvax ? "AVAX" : bond.displayUnits;
+    const displayUnits = useSgb ? "SGB" : bond.displayUnits;
 
     return (
         <Box display="flex" flexDirection="column">
             <Box display="flex" justifyContent="space-around" flexWrap="wrap">
-                {bond.name === "wavax" && (
+                {bond.name === "wsgb" && (
                     <FormControl className="ohm-input" variant="outlined" color="primary" fullWidth>
-                        <div className="avax-checkbox">
-                            <input type="checkbox" checked={useAvax} onClick={() => setUseAvax(!useAvax)} />
-                            <p>Use AVAX</p>
+                        <div className="sgb-checkbox">
+                            <input type="checkbox" checked={useSgb} onClick={() => setUseSgb(!useAvax)} />
+                            <p>Use SGB</p>
                         </div>
                     </FormControl>
                 )}
@@ -150,7 +150,7 @@ function BondPurchase({ bond, slippage }: IBondPurchaseProps) {
                         }
                     />
                 </FormControl>
-                {hasAllowance() || useAvax ? (
+                {hasAllowance() || useSgb ? (
                     <div
                         className="transaction-button bond-approve-btn"
                         onClick={async () => {
@@ -176,7 +176,7 @@ function BondPurchase({ bond, slippage }: IBondPurchaseProps) {
                     <p>Zap</p>
                 </div>
 
-                {!hasAllowance() && !useAvax && (
+                {!hasAllowance() && !useSgb && (
                     <div className="help-text">
                         <p className="help-text-desc">
                             Note: The "Approve" transaction is only needed when minting for the first time; subsequent minting only requires you to perform the "Mint" transaction.
@@ -194,7 +194,7 @@ function BondPurchase({ bond, slippage }: IBondPurchaseProps) {
                                 <Skeleton width="100px" />
                             ) : (
                                 <>
-                                    {trim(useAvax ? bond.avaxBalance : bond.balance, 4)} {displayUnits}
+                                    {trim(useSgb ? bond.sgbBalance : bond.balance, 4)} {displayUnits}
                                 </>
                             )}
                         </p>
@@ -202,12 +202,12 @@ function BondPurchase({ bond, slippage }: IBondPurchaseProps) {
 
                     <div className="data-row">
                         <p className="bond-balance-title">You Will Get</p>
-                        <p className="price-data bond-balance-title">{isBondLoading ? <Skeleton width="100px" /> : `${trim(bond.bondQuote, 4)} TIME`}</p>
+                        <p className="price-data bond-balance-title">{isBondLoading ? <Skeleton width="100px" /> : `${trim(bond.bondQuote, 4)} JAZZ`}</p>
                     </div>
 
                     <div className={`data-row`}>
                         <p className="bond-balance-title">Max You Can Buy</p>
-                        <p className="price-data bond-balance-title">{isBondLoading ? <Skeleton width="100px" /> : `${trim(bond.maxBondPrice, 4)} TIME`}</p>
+                        <p className="price-data bond-balance-title">{isBondLoading ? <Skeleton width="100px" /> : `${trim(bond.maxBondPrice, 4)} JAZZ`}</p>
                     </div>
 
                     <div className="data-row">
@@ -222,7 +222,7 @@ function BondPurchase({ bond, slippage }: IBondPurchaseProps) {
 
                     <div className="data-row">
                         <p className="bond-balance-title">Minimum purchase</p>
-                        <p className="bond-balance-title">0.01 TIME</p>
+                        <p className="bond-balance-title">0.01 JAZZ</p>
                     </div>
                 </Box>
             </Slide>
