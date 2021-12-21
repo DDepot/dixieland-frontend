@@ -35,7 +35,7 @@ export const useWeb3Context = () => {
         throw new Error("useWeb3Context() can only be used inside of <Web3ContextProvider />, " + "please declare it at a higher level.");
     }
     const { onChainProvider } = web3Context;
-    return useBlue(() => {
+    return useMemo(() => {
         return { ...onChainProvider };
     }, [web3Context]);
 };
