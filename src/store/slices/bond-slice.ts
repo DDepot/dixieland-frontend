@@ -164,7 +164,7 @@ export const calcBondDetails = createAsyncThunk("bonding/calcBondDetails", async
         purchased = await bondCalcContract.valuation(assetAddress, purchased);
         purchased = (markdown / Math.pow(10, 18)) * (purchased / Math.pow(10, 9));
 
-        if (bond.name === sgbJAZZ.name) {
+        if (bond.name === sgbJazz.name) {
             const sgbPrice = getTokenPrice("SGB");
             purchased = purchased * sgbPrice;
         }
