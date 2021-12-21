@@ -35,7 +35,7 @@ export const useWeb3Context = () => {
         throw new Error("useWeb3Context() can only be used inside of <Web3ContextProvider />, " + "please declare it at a higher level.");
     }
     const { onChainProvider } = web3Context;
-    return useMemo(() => {
+    return useBlue(() => {
         return { ...onChainProvider };
     }, [web3Context]);
 };
@@ -129,7 +129,7 @@ export const Web3ContextProvider: React.FC<{ children: ReactElement }> = ({ chil
 
     const checkWrongNetwork = async (): Promise<boolean> => {
         if (providerChainID !== DEFAULT_NETWORK) {
-            const shouldSwitch = window.confirm(messages.switch_to_songbird);
+            const shouldSwitch = window.confirm(messages.switch_to_testnet);
             if (shouldSwitch) {
                 await swithNetwork();
                 window.location.reload();
