@@ -134,7 +134,6 @@ function NavContent() {
                     <img alt="" src={DocsIcon} />
                     <p>Docs</p>
                 </Link>
-                
             </div>
             <Social />
         </div>
