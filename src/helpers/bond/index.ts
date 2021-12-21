@@ -21,8 +21,7 @@ export const guac = new StableBond({
             bondAddress: "0x694738EXXXXXXXXXXXXXXXXXXXXXX7B556",
             reserveAddress: "0x130966628XXXXXXXXXXXXXXXXXXXC18D",
         },
-    },
-    /*tokensInStrategy: "60500000000000000000000000",*/                             
+    },                     
 });
 
 export const wsgb = new CustomBond({
@@ -37,8 +36,7 @@ export const wsgb = new CustomBond({
             bondAddress: "0xE02B1AA2XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX7318",
             reserveAddress: "0xb31f66aa3c1eXXXXXXXXXXXXXXXXXXb85fd66c7",
         },
-    },
-    /*tokensInStrategy: "756916000000000000000000",*/                    
+    },              
 });
 
 export const guacJazz = new LPBond({
