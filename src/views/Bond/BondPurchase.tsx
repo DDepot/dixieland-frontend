@@ -128,7 +128,7 @@ function BondPurchase({ bond, slippage }: IBondPurchaseProps) {
                 {bond.name === "wsgb" && (
                     <FormControl className="ohm-input" variant="outlined" color="primary" fullWidth>
                         <div className="sgb-checkbox">
-                            <input type="checkbox" checked={useSgb} onClick={() => setUseSgb(!useAvax)} />
+                            <input type="checkbox" checked={useSgb} onClick={() => setUseSgb(!useSgb)} />
                             <p>Use SGB</p>
                         </div>
                     </FormControl>
