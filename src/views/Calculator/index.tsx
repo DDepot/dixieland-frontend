@@ -216,7 +216,7 @@ function Calculator() {
                                         <p className="data-row-value">{isAppLoading ? <Skeleton width="80px" /> : <>${potentialReturn}</>}</p>
                                     </div>
                                     <div className="data-row">
-                                        <p className="data-row-name">Potential number of lambos</p>
+                                        <p className="data-row-name">Potential number of Teslas</p>
                                         <p className="data-row-value">{isAppLoading ? <Skeleton width="80px" /> : <>{Math.floor(Number(potentialReturn) / 220000)}</>}</p>
                                     </div>
                                 </div>
