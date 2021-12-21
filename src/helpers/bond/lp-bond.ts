@@ -60,7 +60,7 @@ export class LPBond extends Bond {
         return isToken ? this.toTokenDecimal(false, isJazz ? reserve0 : reserve1) : this.toTokenDecimal(true, isJazz ? reserve1 : reserve0);
     }
 
-    private toTokenDecimal(isTime: boolean, reserve: number) {
+    private toTokenDecimal(isJazz: boolean, reserve: number) {
         return isJazz ? reserve / Math.pow(10, 9) : reserve / Math.pow(10, 18);
     }
 }
