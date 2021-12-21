@@ -1,5 +1,4 @@
 export const messages = {
-
     please_connect: "Please connect your wallet to the Songbird network to use Dixieland.",
     please_connect_wallet: "Please connect your wallet.",
     try_mint_more: (value: string) => `You're trying to mint more than the maximum payout available! The maximum mint payout is ${value} JAZZ.`,
