@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./header.scss";
-import DixielandIcon from "../../../../assets/icons/dixieland-icon.png";   
+import DixielandIcon from "../../../../assets/icons/dixieland-icon.png";
 import { SvgIcon, Link, Box, Popper, Fade } from "@material-ui/core";
 import { ReactComponent as GitHub } from "../../../../assets/icons/github.svg";
 import { ReactComponent as Twitter } from "../../../../assets/icons/twitter.svg";
