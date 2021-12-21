@@ -55,11 +55,11 @@ export interface IToken {
     name: string;
     address: string;
     img: string;
-    isAvax?: boolean;
+    isSgb?: boolean;
     decimals: number;
 }
 
-export const avax: IToken = {
+const avax: IToken = {
     name: "AVAX",
     isAvax: true,
     img: AvaxIcon,
