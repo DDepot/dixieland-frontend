@@ -61,7 +61,6 @@ export interface IToken {
 
 const avax: IToken = {
     name: "AVAX",
-    isAvax: true,
     img: AvaxIcon,
     address: "",
     decimals: 18,
