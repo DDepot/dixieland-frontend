@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "@material-ui/core";
 import "./main.scss";
-import JazzImg from "../../../../assets/icons/dixieland-icon.png";
+import JazzImg from "../../../../assets/icons/Dixieland_Band.png";
 
 function Main() {
     return (
@@ -26,7 +26,7 @@ function Main() {
                 <p>DixieLand</p>
             </div>
             <div className="landing-main-help-text-wrap">
-                <p>a Decentralized reserve currency protocol built on the Songbird Network. Stake</p>
+                <p>Decentralized reserve currency protocol built on the Songbird Network and backed by avovaDoge (wrapped Dogecoin). Stake</p>
                 <p>and earn auto compounding interest with JAZZ</p>
             </div>
         </div>
