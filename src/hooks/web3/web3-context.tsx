@@ -1,4 +1,4 @@
-import React, { useState, ReactElement, useContext, useBlue, useCallback } from "react";
+import React, { useState, ReactElement, useContext, useMemo, useCallback } from "react";
 import Web3Modal from "web3modal";
 import { StaticJsonRpcProvider, JsonRpcProvider, Web3Provider } from "@ethersproject/providers";
 import WalletConnectProvider from "@walletconnect/web3-provider";
@@ -35,7 +35,7 @@ export const useWeb3Context = () => {
         throw new Error("useWeb3Context() can only be used inside of <Web3ContextProvider />, " + "please declare it at a higher level.");
     }
     const { onChainProvider } = web3Context;
-    return useBlue(() => {
+    return useMemo(() => {
         return { ...onChainProvider };
     }, [web3Context]);
 };
@@ -149,7 +149,7 @@ export const Web3ContextProvider: React.FC<{ children: ReactElement }> = ({ chil
         }, 1);
     }, [provider, web3Modal, connected]);
 
-    const onChainProvider = useBlue(
+    const onChainProvider = useMemo(
         () => ({
             connect,
             disconnect,
