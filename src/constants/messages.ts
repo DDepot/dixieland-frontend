@@ -1,5 +1,5 @@
 export const messages = {
-    check_wrong_network: "switch_to_songbird",
+    
     please_connect: "Please connect your wallet to the Songbird network to use Dixieland.",
     please_connect_wallet: "Please connect your wallet.",
     try_mint_more: (value: string) => `You're trying to mint more than the maximum payout available! The maximum mint payout is ${value} JAZZ.`,
@@ -12,7 +12,7 @@ export const messages = {
     your_balance_updated: "Your balance was successfully updated",
     nothing_to_claim: "You have nothing to claim",
     something_wrong: "Something went wrong",
-    switch_to_avalanche: "Switch to the Songbird network?",
+    switch_to_songbird: "Switch to the Songbird network?",
     slippage_too_small: "Slippage too small",
     slippage_too_big: "Slippage too big",
     your_balance_update_soon: "Your balance will update soon",
