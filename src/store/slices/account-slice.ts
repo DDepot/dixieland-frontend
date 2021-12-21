@@ -78,7 +78,7 @@ export const loadAccountDetails = createAsyncThunk("account/loadAccountDetails",
     const addresses = getAddresses(networkID);
 
     if (addresses.JAZZ_ADDRESS) {
-        const timeContract = new ethers.Contract(addresses.JAZZ_ADDRESS, JazzTokenContract, provider);
+        const jazzContract = new ethers.Contract(addresses.JAZZ_ADDRESS, JazzTokenContract, provider);
         jazzBalance = await jazzContract.balanceOf(address);
         stakeAllowance = await jazzContract.allowance(address, addresses.STAKING_HELPER_ADDRESS);
     }
