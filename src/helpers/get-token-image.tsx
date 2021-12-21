@@ -12,7 +12,7 @@ export function getTokenUrl(name: string) {
     }
 
     if (name === "blue") {
-        return toUrl(BLUEImg);
+        return toUrl(BlueImg);
     }
 
     throw Error(`Token url doesn't support: ${name}`);
