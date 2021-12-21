@@ -33,7 +33,7 @@ function Calculator() {
     const [potentialReturn, setPotentialReturn] = useState("0");
 
     const calcInitialInvestment = () => {
-        const blue = Number(memoAmount) || 0;
+        const blue = Number(blueAmount) || 0;
         const price = parseFloat(priceAtPurchase) || 0;
         const amount = blue * price;
         return trim(amount, 2);
