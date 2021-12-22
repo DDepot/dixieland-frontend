@@ -49,10 +49,7 @@ function BondRedeem({ bond }: IBondRedeem) {
     }
 
     const vestingTime = () => {
-        if (!bondDetails) {
-            return "";
-        }
-        return prettyVestingPeriod(currentBlockTime, bondDetails.bondMaturationBlock);
+        return prettyVestingPeriod(currentBlockTime, _.get(bondDetails, "bondMaturationBlock"));
     };
 
     const vestingPeriod = () => {
@@ -100,6 +97,11 @@ function BondRedeem({ bond }: IBondRedeem) {
                     <div className="data-row">
                         <p className="bond-balance-title">ROI</p>
                         <p className="bond-balance-title">{isBondLoading ? <Skeleton width="100px" /> : `${trim(bond.bondDiscount * 100, 2)}%`}</p>
+                    </div>
+
+                    <div className="data-row">
+                        <p className="bond-balance-title">Debt Ratio</p>
+                        <p className="bond-balance-title">{isBondLoading ? <Skeleton width="100px" /> : `${trim(bond.debtRatio, 2)}%`}</p>
                     </div>
 
                     <div className="data-row">
