@@ -101,11 +101,6 @@ function BondRedeem({ bond }: IBondRedeem) {
                     </div>
 
                     <div className="data-row">
-                        <p className="bond-balance-title">Debt Ratio</p>
-                        <p className="bond-balance-title">{isBondLoading ? <Skeleton width="100px" /> : `${trim(bond.debtRatio, 2)}%`}</p>
-                    </div>
-
-                    <div className="data-row">
                         <p className="bond-balance-title">Vesting Term</p>
                         <p className="bond-balance-title">{isBondLoading ? <Skeleton width="100px" /> : vestingPeriod()}</p>
                     </div>
