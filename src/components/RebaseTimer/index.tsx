@@ -15,7 +15,7 @@ function RebaseTimer() {
         return state.app.nextRebase;
     });
 
-    const timeUntilRebase = useBlue(() => {
+    const timeUntilRebase = useMemo(() => {
         if (currentBlockTime && nextRebase) {
             const seconds = secondsUntilBlock(currentBlockTime, nextRebase);
             return prettifySeconds(seconds);
