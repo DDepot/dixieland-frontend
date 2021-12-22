@@ -3,7 +3,7 @@ import { secondsUntilBlock, prettifySeconds } from "../../helpers";
 import { Box } from "@material-ui/core";
 import "./rebasetimer.scss";
 import { Skeleton } from "@material-ui/lab";
-import { useBlue } from "react";
+import { useMemo } from "react";
 import { IReduxState } from "../../store/slices/state.interface";
 
 function RebaseTimer() {
