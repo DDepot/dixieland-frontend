@@ -26,7 +26,7 @@
     "from-exponential": "^1.1.1",
     "intl": "^1.2.5",
     "lodash": "^4.17.21",
-    "node-sass": "^6.0.1",
+    "node-sass": "^7.0.2",
     "node-watch": "^0.7.1",
     "notistack": "^1.0.10",
     "react": "^16.14.0",
